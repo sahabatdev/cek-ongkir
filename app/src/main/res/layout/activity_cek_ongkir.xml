@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    tools:context=".module.cek_ongkir.CekOngkirActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CEK ONGKIR KURIR"
+        android:textStyle="bold"
+        android:textSize="@dimen/_20sdp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/et_kota_asal"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_border"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:focusable="false"
+        android:hint="Kota Asal"
+        android:padding="@dimen/_5sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:drawableRight="@drawable/ic_left"
+        />
+
+    <EditText
+        android:id="@+id/et_kota_tujuan"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_border"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:focusable="false"
+        android:hint="Kota Tujuan"
+        android:paddingLeft="@dimen/_10sdp"
+        android:drawableRight="@drawable/ic_left"
+        />
+
+    <EditText
+        android:id="@+id/et_berat_barang"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/bg_border"
+        android:hint="Berat Barang (Gram)"
+        android:paddingLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/bg_border">
+        <Spinner
+            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/spn_pilih_kurir"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_cek"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:textColor="@android:color/white"
+        android:text="CEK"
+        android:backgroundTint="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/tv_hasil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_14sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
+</LinearLayout>

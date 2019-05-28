@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Cek API</string>
+    <string name="label_loading">Terhubung ke Server</string>
+</resources>

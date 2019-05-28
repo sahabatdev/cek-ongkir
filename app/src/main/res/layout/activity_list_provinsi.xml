@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    tools:context=".module.list_provinsi.ListProvinsiActivity">
+
+    <EditText
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/et_search_provinsi"
+        android:hint="Cari Kota / Provinsi"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+    </EditText>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_list_provinsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
