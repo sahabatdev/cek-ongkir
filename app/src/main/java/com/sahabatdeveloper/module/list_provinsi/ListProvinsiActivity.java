@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,6 +19,7 @@ import com.sahabatdeveloper.model.CityResponse;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.realm.Case;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -42,6 +45,23 @@ public class ListProvinsiActivity extends BaseActivity implements ListProvinsiVi
             mPresenter.getDataCity(AppConfig.API_KEY_RAJA_ONGKIR);
         else
             showData();
+
+        etSearchProvinsi.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filterData(editable.toString());
+            }
+        });
     }
 
     private void showData(){
@@ -57,6 +77,22 @@ public class ListProvinsiActivity extends BaseActivity implements ListProvinsiVi
             }
         });
     }
+
+    private void filterData(final String filter){
+        mRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                RealmResults<CityProvinceRealm> results = realm.where(CityProvinceRealm.class).contains("city",filter, Case.INSENSITIVE).or().contains("province",filter, Case.INSENSITIVE).findAll();
+                rvListProvinsi.setLayoutManager(new LinearLayoutManager(ListProvinsiActivity.this));
+                rvListProvinsi.setHasFixedSize(true);
+                List<CityProvinceRealm> listData = new ArrayList<>();
+                listData.addAll(results);
+                rvListProvinsi.setAdapter(new ListProvinsiAdapter(ListProvinsiActivity.this,ListProvinsiActivity.this,listData));
+            }
+        });
+    }
+
+
 
     private boolean isExistData(){
         RealmResults<CityProvinceRealm> results = mRealm.where(CityProvinceRealm.class).findAll();

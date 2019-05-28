@@ -96,7 +96,7 @@ public class CekOngkirActivity extends BaseActivity implements CekOngkirView{
 
         String tipePengiriman = "\n\nService\n\n";
         for (CostResponse.Costs cost : body.getRajaongkir().getResults().get(0).getCosts()) {
-            tipePengiriman+=cost.getService() +" - "+cost.getCost().get(0).getEtd()+" - Rp"+convertRupiah(cost.getCost().get(0).getValue());
+            tipePengiriman+=cost.getService() +" | "+cost.getCost().get(0).getEtd()+" | Rp"+convertRupiah(cost.getCost().get(0).getValue())+"\n";
         }
 
         tvHasil.append(tipePengiriman);
