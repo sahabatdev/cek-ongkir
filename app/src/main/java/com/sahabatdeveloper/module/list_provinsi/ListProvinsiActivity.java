@@ -92,8 +92,6 @@ public class ListProvinsiActivity extends BaseActivity implements ListProvinsiVi
         });
     }
 
-
-
     private boolean isExistData(){
         RealmResults<CityProvinceRealm> results = mRealm.where(CityProvinceRealm.class).findAll();
         if(results!=null && results.size()!=0){
@@ -101,8 +99,6 @@ public class ListProvinsiActivity extends BaseActivity implements ListProvinsiVi
         }
         return false;
     }
-
-
 
     @Override
     public void onSuccessGetCity(List<CityResponse.Results> listCity) {
